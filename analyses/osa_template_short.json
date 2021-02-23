@@ -1,0 +1,75 @@
+{
+  "analysis": {
+    "display_name": "simple_test_run",
+    "name": "simple_test_run",
+    "output_variables": [
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "eui",
+        "display_name_short": "eui",
+        "metadata_id": null,
+        "name": "openstudio_results.eui",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      }
+    ],
+    "problem": {
+      "workflow": [
+        {
+          "name": "create_doe_prototype_building",
+          "display_name": "Create DOE Prototype Building",
+          "measure_definition_directory": "./measures/create_DOE_prototype_building",
+          "arguments": [
+            {
+              "name": "building_type",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-2A"
+            }
+          ],
+          "variables": []
+        },
+        {
+          "name": "openstudio_results",
+          "measure_definition_class_name": "OpenStudioResults",
+          "measure_definition_directory": "./measures/openstudio_results",
+          "arguments": [
+            {
+              "name": "zone_condition_section",
+              "value": true
+            }
+          ],
+          "variables": []
+        }
+      ],
+      "algorithm": {
+        "seed": null,
+        "failed_f_value": 1000000000000000000,
+        "debug_messages": 0,
+        "objective_functions": []
+      },
+      "analysis_type": "single_run"
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seeds/empty_seed.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
+    },
+    "file_format_version": 1,
+    "server_scripts": {}
+  }
+}

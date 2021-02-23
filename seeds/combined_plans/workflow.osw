@@ -1,0 +1,62 @@
+{
+   "created_at" : "20190718T174012Z",
+   "seed_file" : "../combined_plans.osm",
+   "steps" : [
+      {
+         "arguments" : {},
+         "description" : "If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space.",
+         "measure_dir_name" : "CreateAndAssignThermalZonesForUnassignedSpaces",
+         "modeler_description" : "Thermal zones will be named after the spac with a prefix added",
+         "name" : "Create and Assign Thermal Zones for Unassigned Spaces"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade S"
+      },
+      {
+         "arguments" : {
+            "facade" : "North"
+         },
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade N"
+      },
+      {
+         "arguments" : {
+            "facade" : "East"
+         },
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade E"
+      },
+      {
+         "arguments" : {
+            "facade" : "West"
+         },
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade W"
+      },
+      {
+         "arguments" : {},
+         "description" : "Visualize an OpenStudio model in a web based viewer",
+         "measure_dir_name" : "ViewModel",
+         "modeler_description" : "Converts the OpenStudio model to vA3C JSON format and renders using Three.js",
+         "name" : "ViewModel"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+         "measure_dir_name" : "OpenStudioResults",
+         "modeler_description" : "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+         "name" : "OpenStudio Results"
+      }
+   ],
+   "updated_at" : "20190827T152817Z"
+}

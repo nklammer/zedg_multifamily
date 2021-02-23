@@ -1,0 +1,518 @@
+{
+  "analysis": {
+    "display_name": "OSW 2 OSA - DOE Algorithm",
+    "name": "osw_2_osa_doe",
+    "output_variables": [
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "eui",
+        "display_name_short": "eui",
+        "metadata_id": null,
+        "name": "openstudio_results.eui",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "total_site_eui",
+        "display_name_short": "total_site_eui",
+        "name": "openstudio_results.total_site_eui",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "annual_peak_electric_demand",
+        "display_name_short": "annual_peak_electric_demand",
+        "name": "openstudio_results.annual_peak_electric_demand",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "unmet_hours_during_occupied_cooling",
+        "display_name_short": "unmet_hours_during_occupied_cooling",
+        "name": "openstudio_results.unmet_hours_during_occupied_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "unmet_hours_during_occupied_heating",
+        "display_name_short": "unmet_hours_during_occupied_heating",
+        "name": "openstudio_results.unmet_hours_during_occupied_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "total_site_energy",
+        "display_name_short": "total_site_energy",
+        "name": "openstudio_results.total_site_energy",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "net_site_energy",
+        "display_name_short": "net_site_energy",
+        "name": "openstudio_results.net_site_energy",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_heating",
+        "display_name_short": "end_use_heating",
+        "name": "openstudio_results.end_use_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_cooling",
+        "display_name_short": "end_use_cooling",
+        "name": "openstudio_results.end_use_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_interior_lighting",
+        "display_name_short": "end_use_interior_lighting",
+        "name": "openstudio_results.end_use_interior_lighting",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_exterior_lighting",
+        "display_name_short": "end_use_exterior_lighting",
+        "name": "openstudio_results.end_use_exterior_lighting",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_interior_equipment",
+        "display_name_short": "end_use_interior_equipment",
+        "name": "openstudio_results.end_use_interior_equipment",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_exterior_equipment",
+        "display_name_short": "end_use_exterior_equipment",
+        "name": "openstudio_results.end_use_exterior_equipment",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_fans",
+        "display_name_short": "end_use_fans",
+        "name": "openstudio_results.end_use_fans",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_pumps",
+        "display_name_short": "end_use_pumps",
+        "name": "openstudio_results.end_use_pumps",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_heat_rejection",
+        "display_name_short": "end_use_heat_rejection",
+        "name": "openstudio_results.end_use_heat_rejection",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_humidification",
+        "display_name_short": "end_use_humidification",
+        "name": "openstudio_results.end_use_humidification",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_heat_recovery",
+        "display_name_short": "end_use_heat_recovery",
+        "name": "openstudio_results.end_use_heat_recovery",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_water_systems",
+        "display_name_short": "end_use_water_systems",
+        "name": "openstudio_results.end_use_water_systems",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_refrigeration",
+        "display_name_short": "end_use_refrigeration",
+        "name": "openstudio_results.end_use_refrigeration",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "end_use_generators",
+        "display_name_short": "end_use_generators",
+        "name": "openstudio_results.end_use_generators",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "fuel_electricity",
+        "display_name_short": "fuel_electricity",
+        "name": "openstudio_results.fuel_electricity",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "fuel_natural_gas",
+        "display_name_short": "fuel_natural_gas",
+        "name": "openstudio_results.fuel_natural_gas",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "fuel_additional_fuel",
+        "display_name_short": "fuel_additional_fuel",
+        "name": "openstudio_results.fuel_additional_fuel",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "fuel_district_cooling",
+        "display_name_short": "fuel_district_cooling",
+        "name": "openstudio_results.fuel_district_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "fuel_district_heating",
+        "display_name_short": "fuel_district_heating",
+        "name": "openstudio_results.fuel_district_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_interior_lighting_gj",
+        "display_name_short": "midriseapartment_interior_lighting_gj",
+        "name": "energy_use_by_standards_building_type.midriseapartment_interior_lighting_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_interior_equipment_gj",
+        "display_name_short": "midriseapartment_interior_equipment_gj",
+        "name": "energy_use_by_standards_building_type.midriseapartment_interior_equipment_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_floor_area_m_2",
+        "display_name_short": "midriseapartment_floor_area_m_2",
+        "name": "energy_use_by_standards_building_type.midriseapartment_floor_area_m_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_total_end_uses_gj",
+        "display_name_short": "midriseapartment_total_end_uses_gj",
+        "name": "energy_use_by_standards_building_type.midriseapartment_total_end_uses_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_total_eui_kbtu_per_ft_2",
+        "display_name_short": "midriseapartment_total_eui_kbtu_per_ft_2",
+        "name": "energy_use_by_standards_building_type.midriseapartment_total_eui_kbtu_per_ft_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "midriseapartment_hot_water_volume_m_3",
+        "display_name_short": "midriseapartment_hot_water_volume_m_3",
+        "name": "energy_use_by_standards_building_type.midriseapartment_hot_water_volume_m_3",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_interior_lighting_gj",
+        "display_name_short": "smallhotel_interior_lighting_gj",
+        "name": "energy_use_by_standards_building_type.smallhotel_interior_lighting_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_interior_equipment_gj",
+        "display_name_short": "smallhotel_interior_equipment_gj",
+        "name": "energy_use_by_standards_building_type.smallhotel_interior_equipment_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_floor_area_m_2",
+        "display_name_short": "smallhotel_floor_area_m_2",
+        "name": "energy_use_by_standards_building_type.smallhotel_floor_area_m_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_total_end_uses_gj",
+        "display_name_short": "smallhotel_total_end_uses_gj",
+        "name": "energy_use_by_standards_building_type.smallhotel_total_end_uses_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_total_eui_kbtu_per_ft_2",
+        "display_name_short": "smallhotel_total_eui_kbtu_per_ft_2",
+        "name": "energy_use_by_standards_building_type.smallhotel_total_eui_kbtu_per_ft_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "smallhotel_hot_water_volume_m_3",
+        "display_name_short": "smallhotel_hot_water_volume_m_3",
+        "name": "energy_use_by_standards_building_type.smallhotel_hot_water_volume_m_3",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_interior_lighting_gj",
+        "display_name_short": "quickservicerestaurant_interior_lighting_gj",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_interior_lighting_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_interior_equipment_gj",
+        "display_name_short": "quickservicerestaurant_interior_equipment_gj",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_interior_equipment_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_floor_area_m_2",
+        "display_name_short": "quickservicerestaurant_floor_area_m_2",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_floor_area_m_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_total_end_uses_gj",
+        "display_name_short": "quickservicerestaurant_total_end_uses_gj",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_total_end_uses_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_total_eui_kbtu_per_ft_2",
+        "display_name_short": "quickservicerestaurant_total_eui_kbtu_per_ft_2",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_total_eui_kbtu_per_ft_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "quickservicerestaurant_hot_water_volume_m_3",
+        "display_name_short": "quickservicerestaurant_hot_water_volume_m_3",
+        "name": "energy_use_by_standards_building_type.quickservicerestaurant_hot_water_volume_m_3",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_interior_lighting_gj",
+        "display_name_short": "retail_interior_lighting_gj",
+        "name": "energy_use_by_standards_building_type.retail_interior_lighting_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_interior_equipment_gj",
+        "display_name_short": "retail_interior_equipment_gj",
+        "name": "energy_use_by_standards_building_type.retail_interior_equipment_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_floor_area_m_2",
+        "display_name_short": "retail_floor_area_m_2",
+        "name": "energy_use_by_standards_building_type.retail_floor_area_m_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_total_end_uses_gj",
+        "display_name_short": "retail_total_end_uses_gj",
+        "name": "energy_use_by_standards_building_type.retail_total_end_uses_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_total_eui_kbtu_per_ft_2",
+        "display_name_short": "retail_total_eui_kbtu_per_ft_2",
+        "name": "energy_use_by_standards_building_type.retail_total_eui_kbtu_per_ft_2",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "retail_hot_water_volume_m_3",
+        "display_name_short": "retail_hot_water_volume_m_3",
+        "name": "energy_use_by_standards_building_type.retail_hot_water_volume_m_3",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "reported_climate_zone",
+        "display_name_short": "reported_climate_zone",
+        "name": "changebuildinglocation.reported_climate_zone",
+        "visualize": true,
+        "export": true,
+        "variable_type": "string"
+      },
+      {
+        "display_name": "zone_max_hours_over_55_rh",
+        "display_name_short": "zone_max_hours_over_55_rh",
+        "name": "openstudio_results.zone_max_hours_over_55_rh",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "zone_max_hours_over_70_rh",
+        "display_name_short": "zone_max_hours_over_70_rh",
+        "name": "openstudio_results.zone_max_hours_over_70_rh",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "num_zones_x_hours_over_55",
+        "display_name_short": "num_zones_x_hours_over_55",
+        "name": "openstudio_results.num_zones_x_hours_over_55",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "num_zones_x_hours_over_70",
+        "display_name_short": "num_zones_x_hours_over_70",
+        "name": "openstudio_results.num_zones_x_hours_over_70",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "Water to Water Heat Pump Electric Energy GJ",
+        "display_name_short": "water_to_water_heat_pump_electric_energy_gj",
+        "name": "energy_use_by_standards_building_type.water_to_water_heat_pump_electric_energy_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "Water to Water Heat Pump Load Energy GJ",
+        "display_name_short": "water_to_water_heat_pump_load_energy_gj",
+        "name": "energy_use_by_standards_building_type.water_to_water_heat_pump_load_energy_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "Water to Water Heat Pump Annual COP",
+        "display_name_short": "water_to_water_heat_pump_annual_cop",
+        "name": "energy_use_by_standards_building_type.water_to_water_heat_pump_annual_cop",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "Pipe Heat Loss GJ",
+        "display_name_short": "pipe_heat_loss_gj",
+        "name": "energy_use_by_standards_building_type.pipe_heat_loss_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "display_name": "Elevator Energy Use GJ",
+        "display_name_short": "elevator_energy_use_gj",
+        "name": "energy_use_by_standards_building_type.elevator_energy_use_gj",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      }
+    ],
+    "problem": {
+      "workflow": [],
+      "algorithm": {
+        "experiment_type": "full_factorial",
+        "number_of_samples": 80,
+        "seed": null,
+        "failed_f_value": 1000000000000000000,
+        "debug_messages": 0,
+        "objective_functions": []
+      },
+      "analysis_type": "doe"
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seeds/retail_seed.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
+    },
+    "file_format_version": 1,
+    "server_scripts": {
+      "worker_initialization": "./scripts/worker_initialization/initialize.sh"
+    }
+  }
+}

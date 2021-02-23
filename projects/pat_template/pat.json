@@ -1,0 +1,833 @@
+{
+  "projectName": "pat_template",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/NREL/zedg-mixeduse-multifamily/projects/pat_template",
+  "seed": "empty_seed.osm",
+  "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+  "analysis_type": "Algorithmic",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Amazon Cloud",
+    "remoteServerURL": null,
+    "aws": {
+      "connected": false,
+      "cluster_name": "",
+      "server_instance_type": "",
+      "worker_instance_type": "",
+      "user_id": "",
+      "worker_node_number": 0,
+      "aws_tags": [],
+      "openstudio_server_version": ""
+    },
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "single_run",
+    "name": "analysis.type.singleRun",
+    "link": null
+  },
+  "algorithmSettings": [
+    {
+      "name": "seed",
+      "displayName": "Seed",
+      "description": "Integer seed for random number generator",
+      "defaultValue": null,
+      "type": "number",
+      "value": null,
+      "$$hashKey": "object:135"
+    },
+    {
+      "name": "failed_f_value",
+      "displayName": "Failed F Value",
+      "description": "Return Value for F(x) if F fails",
+      "defaultValue": 1000000000000000000,
+      "type": "number",
+      "value": 1000000000000000000,
+      "$$hashKey": "object:197"
+    },
+    {
+      "name": "debug_messages",
+      "displayName": "Debug Messages",
+      "description": "Options: 1 or 0 (True or False)",
+      "defaultValue": 0,
+      "type": "number",
+      "value": 0,
+      "$$hashKey": "object:198"
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/zedg-mixeduse-multifamily/projects/pat_template/measures/8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "name": "openstudio_results",
+      "directory": "/Users/dgoldwas/BCL/a25386cd-60e4-46bc-8b11-c755f379d916/8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "version_uuid": "{8a8a3008-874e-465a-84f5-0b320fbbfa7b}",
+      "version_modified": "20190410T000421Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "name": "units",
+          "display_name": "Which Unit System do you want to use?",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "IP",
+          "choice_values": [
+            "IP",
+            "SI"
+          ],
+          "choice_display_names": [
+            "IP",
+            "SI"
+          ],
+          "display_name_short": "units",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "IP",
+              "SI"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "IP",
+            "minimum": "IP",
+            "mean": "IP",
+            "deltaX": "IP",
+            "stdDev": "IP",
+            "default_value": "IP"
+          },
+          "$$hashKey": "object:1371"
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "building_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1372"
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "annual_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1373"
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "monthly_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1374"
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "utility_bills_rates_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1375"
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "envelope_section_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1376"
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "space_type_breakdown_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1377"
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "space_type_details_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1378"
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "interior_lighting_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1379"
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "plug_loads_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1380"
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "exterior_light_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1381"
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "water_use_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1382"
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "hvac_load_profile",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1383"
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "zone_condition_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1384"
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "zone_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1385"
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "zone_equipment_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1386"
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "air_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1387"
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "plant_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1388"
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "outdoor_air_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1389"
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "cost_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1390"
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "source_energy_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1391"
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "display_name_short": "schedules_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          },
+          "$$hashKey": "object:1392"
+        },
+        {
+          "name": "reg_monthly_details",
+          "display_name": "Report monthly fuel and enduse breakdown to registerValue",
+          "description": "This argument does not effect HTML file, instead it makes data from individal cells of monthly tables avaiable for machine readable values in the resulting OpenStudio Workflow file.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "display_name_short": "reg_monthly_details",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": false,
+            "minimum": false,
+            "mean": false,
+            "deltaX": false,
+            "stdDev": false,
+            "default_value": false
+          },
+          "$$hashKey": "object:1393"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": true,
+      "location": "local",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "4/9/2019",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 0,
+      "options": [],
+      "instanceId": 0.41643148150194764,
+      "skip": false,
+      "$$hashKey": "object:1331"
+    }
+  ],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [],
+  "analysisID": "",
+  "datapoints": []
+}

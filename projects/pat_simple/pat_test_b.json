@@ -1,0 +1,436 @@
+{
+  "analysis": {
+    "display_name": "pat_test_b",
+    "name": "pat_test_b",
+    "output_variables": [
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "eui",
+        "display_name_short": "eui",
+        "metadata_id": null,
+        "name": "openstudio_results.eui",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "annual_peak_electric_demand",
+        "display_name_short": "annual_peak_electric_demand",
+        "metadata_id": null,
+        "name": "openstudio_results.annual_peak_electric_demand",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "unmet_hours_during_occupied_cooling",
+        "display_name_short": "unmet_hours_during_occupied_cooling",
+        "metadata_id": null,
+        "name": "openstudio_results.unmet_hours_during_occupied_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "unmet_hours_during_occupied_heating",
+        "display_name_short": "unmet_hours_during_occupied_heating",
+        "metadata_id": null,
+        "name": "openstudio_results.unmet_hours_during_occupied_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      }
+    ],
+    "problem": {
+      "workflow": [
+        {
+          "name": "residential_simulation_controls",
+          "display_name": "Set Residential Simulation Controls",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "ResidentialSimulationControls",
+          "measure_definition_directory": "./measures/ResidentialSimulationControls",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/NREL/zedg-mixeduse-multifamily/projects/pat_simple/measures/ResidentialSimulationControls",
+          "measure_definition_display_name": "Set Residential Simulation Controls",
+          "measure_definition_name": "residential_simulation_controls",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "874f921e-8f3c-458a-a82f-01b7d51a547e",
+          "measure_definition_version_uuid": "b9258fa8-94ae-4f8e-b4f3-af203eae89cc",
+          "uuid": "874f921e-8f3c-458a-a82f-01b7d51a547e",
+          "version_uuid": "b9258fa8-94ae-4f8e-b4f3-af203eae89cc",
+          "description": "Set the simulation timesteps per hour, the run period begin month/day and end month/day, and the calendar year (for start day of week).",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [
+            {
+              "display_name": "Simulation Timesteps Per Hour",
+              "display_name_short": "timesteps_per_hr",
+              "name": "timesteps_per_hr",
+              "value_type": "integer",
+              "default_value": 6,
+              "value": 6
+            },
+            {
+              "display_name": "Run Period Begin Month",
+              "display_name_short": "begin_month",
+              "name": "begin_month",
+              "value_type": "integer",
+              "default_value": 1,
+              "value": 1
+            },
+            {
+              "display_name": "Run Period Begin Day of Month",
+              "display_name_short": "begin_day_of_month",
+              "name": "begin_day_of_month",
+              "value_type": "integer",
+              "default_value": 1,
+              "value": 1
+            },
+            {
+              "display_name": "Run Period End Month",
+              "display_name_short": "end_month",
+              "name": "end_month",
+              "value_type": "integer",
+              "default_value": 12,
+              "value": 1
+            },
+            {
+              "display_name": "Run Period End Day of Month",
+              "display_name_short": "end_day_of_month",
+              "name": "end_day_of_month",
+              "value_type": "integer",
+              "default_value": 31,
+              "value": 2
+            },
+            {
+              "display_name": "Calendar Year",
+              "display_name_short": "calendar_year",
+              "name": "calendar_year",
+              "value_type": "integer",
+              "default_value": 2007,
+              "value": 2007
+            }
+          ],
+          "variables": [],
+          "workflow_index": 0
+        },
+        {
+          "name": "residential_geometry_from_floorspace_js",
+          "display_name": "Residential Geometry from FloorspaceJS",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "ResidentialGeometryFromFloorspaceJS",
+          "measure_definition_directory": "./measures/ResidentialGeometryCreateFromFloorspaceJS",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/NREL/zedg-mixeduse-multifamily/projects/pat_simple/measures/ResidentialGeometryCreateFromFloorspaceJS",
+          "measure_definition_display_name": "Residential Geometry from FloorspaceJS",
+          "measure_definition_name": "residential_geometry_from_floorspace_js",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "79d7fbb8-e001-4c65-9444-c7dcb975290f",
+          "measure_definition_version_uuid": "ff07a216-b5ed-4347-8a8c-3a1df40c2be0",
+          "uuid": "79d7fbb8-e001-4c65-9444-c7dcb975290f",
+          "version_uuid": "ff07a216-b5ed-4347-8a8c-3a1df40c2be0",
+          "description": "Imports a floorplan JSON file written by the FloorspaceJS tool. Sets the number of bedrooms, bathrooms, and occupants in the building. See https://github.com/NREL/OpenStudio-BuildStock#workflows for supported workflows using this measure.",
+          "taxonomy": "Envelope.Form",
+          "arguments": [
+            {
+              "display_name": "Floorplan Path",
+              "display_name_short": "floorplan_path",
+              "name": "floorplan_path",
+              "value_type": "string",
+              "default_value": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-BuildStock/resources/measures/ResidentialGeometryCreateFromFloorspaceJS/tests/SFD_Multizone.json",
+              "value": "../lib/files/floorplan.json"
+            },
+            {
+              "display_name": "Number of Bedrooms",
+              "display_name_short": "num_bedrooms",
+              "name": "num_bedrooms",
+              "value_type": "string",
+              "default_value": "3",
+              "value": "2, 1, 1, 1, 0, 0, 0, 2, 2, 0, 1, 1, 1, 1, 3, 2, 1, 1, 1, 0, 0, 0, 2, 2, 0, 1, 1, 1, 1, 3, 2, 1, 1, 1, 0, 0, 0, 2, 2, 0, 1, 1, 1, 1, 3"
+            },
+            {
+              "display_name": "Number of Bathrooms",
+              "display_name_short": "num_bathrooms",
+              "name": "num_bathrooms",
+              "value_type": "string",
+              "default_value": "2",
+              "value": "2"
+            },
+            {
+              "display_name": "Number of Occupants",
+              "display_name_short": "num_occupants",
+              "name": "num_occupants",
+              "value_type": "string",
+              "default_value": "auto",
+              "value": "auto"
+            },
+            {
+              "display_name": "Occupants Weekday schedule",
+              "display_name_short": "occupants_weekday_sch",
+              "name": "occupants_weekday_sch",
+              "value_type": "string",
+              "default_value": "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00",
+              "value": "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00"
+            },
+            {
+              "display_name": "Occupants Weekend schedule",
+              "display_name_short": "occupants_weekend_sch",
+              "name": "occupants_weekend_sch",
+              "value_type": "string",
+              "default_value": "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00",
+              "value": "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00"
+            },
+            {
+              "display_name": "Occupants Month schedule",
+              "display_name_short": "occupants_monthly_sch",
+              "name": "occupants_monthly_sch",
+              "value_type": "string",
+              "default_value": "1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0",
+              "value": "1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0"
+            }
+          ],
+          "variables": [],
+          "workflow_index": 1
+        },
+        {
+          "name": "openstudio_results",
+          "display_name": "OpenStudio Results",
+          "measure_type": "ReportingMeasure",
+          "measure_definition_class_name": "OpenStudioResults",
+          "measure_definition_directory": "./measures/openstudio_results",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/NREL/zedg-mixeduse-multifamily/projects/pat_simple/measures/openstudio_results",
+          "measure_definition_display_name": "OpenStudio Results",
+          "measure_definition_name": "openstudio_results",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "measure_definition_version_uuid": "aa1d597c-87b6-4a93-989d-026a2dde4459",
+          "uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "version_uuid": "aa1d597c-87b6-4a93-989d-026a2dde4459",
+          "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+          "taxonomy": "Reporting.QAQC",
+          "arguments": [
+            {
+              "display_name": "Which Unit System do you want to use?",
+              "display_name_short": "units",
+              "name": "units",
+              "value_type": "string",
+              "default_value": "IP",
+              "value": "IP"
+            },
+            {
+              "display_name": "Model Summary",
+              "display_name_short": "building_summary_section",
+              "name": "building_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Annual Overview",
+              "display_name_short": "annual_overview_section",
+              "name": "annual_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Monthly Overview",
+              "display_name_short": "monthly_overview_section",
+              "name": "monthly_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Utility Bills/Rates",
+              "display_name_short": "utility_bills_rates_section",
+              "name": "utility_bills_rates_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Envelope Summary",
+              "display_name_short": "envelope_section_section",
+              "name": "envelope_section_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Breakdown",
+              "display_name_short": "space_type_breakdown_section",
+              "name": "space_type_breakdown_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Summary",
+              "display_name_short": "space_type_details_section",
+              "name": "space_type_details_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Interior Lighting Summary",
+              "display_name_short": "interior_lighting_section",
+              "name": "interior_lighting_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plug Loads Summary",
+              "display_name_short": "plug_loads_section",
+              "name": "plug_loads_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Exterior Lighting",
+              "display_name_short": "exterior_light_section",
+              "name": "exterior_light_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Water Use Equipment",
+              "display_name_short": "water_use_section",
+              "name": "water_use_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "HVAC Load Profiles",
+              "display_name_short": "hvac_load_profile",
+              "name": "hvac_load_profile",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Conditions",
+              "display_name_short": "zone_condition_section",
+              "name": "zone_condition_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Overview",
+              "display_name_short": "zone_summary_section",
+              "name": "zone_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Equipment Detail",
+              "display_name_short": "zone_equipment_detail_section",
+              "name": "zone_equipment_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Air Loops Detail",
+              "display_name_short": "air_loops_detail_section",
+              "name": "air_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plant Loops Detail",
+              "display_name_short": "plant_loops_detail_section",
+              "name": "plant_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Outdoor Air",
+              "display_name_short": "outdoor_air_section",
+              "name": "outdoor_air_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Cash Flow",
+              "display_name_short": "cost_summary_section",
+              "name": "cost_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Site and Source Summary",
+              "display_name_short": "source_energy_section",
+              "name": "source_energy_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Schedule Overview",
+              "display_name_short": "schedules_overview_section",
+              "name": "schedules_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Report monthly fuel and enduse breakdown to registerValue",
+              "display_name_short": "reg_monthly_details",
+              "name": "reg_monthly_details",
+              "value_type": "boolean",
+              "default_value": false,
+              "value": false
+            }
+          ],
+          "variables": [],
+          "workflow_index": 2
+        }
+      ],
+      "algorithm": {
+        "seed": null,
+        "failed_f_value": 1000000000000000000,
+        "debug_messages": 0,
+        "objective_functions": []
+      },
+      "analysis_type": "single_run"
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seeds/retail_seed.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
+    },
+    "file_format_version": 1,
+    "server_scripts": {}
+  }
+}
