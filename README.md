@@ -26,7 +26,7 @@ Run with custom standards Gem:
 - custom_example_testing: This is a smaller 3 story, 6 unit per story example for testing out code changes. It's setup to run for the full year, and takes about 20-25 minutes to run.
 
 ## Analyses
-Development testing has been using an OSW file in the `workflows/json_test_chicago` directory. Instead of keeping a PAT projet in sync with that we are using a ruby script named `osw_2_osa_multizedg.rb`. This script creates an OSA file from the OSW file, sets up specified variables, and creates the necessary analysis zip file, with measures from across the repositories defined in the test OSW. Here are the steps to generate and run the OSA.
+Development testing has been using an OSW file in the `workflows/json_test_chicago` directory. Instead of keeping a PAT project in sync with that we are using a ruby script named `osw_2_osa_multizedg.rb`. This script creates an OSA file from the OSW file, sets up specified variables, and creates the necessary analysis zip file, with measures from across the repositories defined in the test OSW. Here are the steps to generate and run the OSA.
 1. Checkout the repositories specified earlier in the readme file. They should sit next to this repository checkout.
 2. change directory to the `analyses` directory and run `osw_2_osa_multizedg.rb`. There are two optional bool arguments that both default to true. The first determines if a new analysis json is generated, and the second if the zip file is generated. There may be times that you just want to re-generate one of the two.
 3. To make using the metaCLI easier setup your computer so the command line in recognized. For example on mac add this line to your `.bash_profile`. 
