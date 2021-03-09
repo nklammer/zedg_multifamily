@@ -9,7 +9,7 @@
     "../../../resstock/resources/measures",
     "../../../OpenStudio-measures/nrel_published",
     "../../../OpenStudio-measures/nrel_dev",
-    "../../../../UnmetHours/openstudio-measures"
+    "../../../UnmetHours/openstudio-measures"
   ],
   "steps": [
     {
