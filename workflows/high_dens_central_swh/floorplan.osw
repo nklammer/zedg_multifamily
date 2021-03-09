@@ -5,11 +5,11 @@
     "../../weather"
   ],
   "measure_paths": [
-    "../../../OpenStudio-BuildStock/measures",
-    "../../../OpenStudio-BuildStock/resources/measures",
+    "../../../resstock/measures",
+    "../../../resstock/resources/measures",
     "../../../OpenStudio-measures/nrel_published",
     "../../../OpenStudio-measures/nrel_dev",
-    "../../../../UnmetHours/openStudio-measures"
+    "../../../../UnmetHours/openstudio-measures"
   ],
   "steps": [
     {

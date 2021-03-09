@@ -8,8 +8,8 @@
     "../../measures",
     "../../../OpenStudio-measures/nrel_published",
     "../../../OpenStudio-measures/nrel_dev",
-    "../../../OpenStudio-BuildStock/measures",
-    "../../../OpenStudio-BuildStock/resources/measures"
+    "../../../resstock/measures",
+    "../../../resstock/resources/measures"
   ],
   "steps": [
     {
